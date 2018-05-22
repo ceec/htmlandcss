@@ -1,136 +1,141 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Sushi Place</title>
-
-        <!-- stylesheets -->
-
-        <!-- fonts -->
+        <!-- css -->
         <style>
+        .card {
+            width: 400px;
+            background-color: lavenderblush;
+            border: 2px solid black;
+            margin: 20px;
+        }
+
+        .card h2 {
+            text-align:center;
+        }
+
+        .card button, input {
+            /* width: 100px; 
+            margin: 0 auto; */
+            margin-left: 150px;
+            margin-right: 150px;
+            background-color: red;
+            border-width: 2px;
+            border-style: outset;
+            border-color: lightgoldenrodyellow;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 5px 5px 5px #888888;
+
+        }
+
+        /* taken from boostrap */
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }   
         
-        body {
-            background-color:paleturquoise;
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
         }
 
-        .header {
-           background-image: url('images/giantsushiroll.jpeg');
-           background-repeat: no-repeat;
-           background-size:cover;
-           background-position-y: -20px;
-           height:400px;
-
-        }
-
-        .header h1 {
-            font-size:60px;
-            color:green;
-           text-align: center;            
-        }
-
-        .phone {
-
-        }
-
-
-        /* style links */
-        /* unvisited link */
-       .header a:link {
-            color: red;
-            text-decoration: none;
-        }
-
-        /* visited link */
-        .header a:visited {
-            color: orange;
-        }
-    
-        /* mouse over link */
-        .header a:hover {
-            color: hotpink;
-            background-color:orchid;
-            text-decoration: underline;
-        }
-
-        /* selected link */
-a:active {
-    color: red;
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
 
-    nav ul {
-        list-style-type: none;
-        background-color: gray;
-        padding: 10px;
-    }
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
 
-    nav ul li {
-        padding:10px;
-        display: inline;
-    }
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 
-
-        /* unvisited link */
-        nav ul a:link {
-            color: red;
-            text-decoration: none;
-        }
-
-        /* visited link */
-        nav ul a:visited {
-            color: orange;
-        }
-    
-        /* mouse over link */
-        nav ul  a:hover {
-            color: black;
-            background-color:orchid;
-            padding:10px;
-            text-decoration: none;
-        }
-
-
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
 
         </style>
     </head>
     <body>
-        <header class="header">
-            <h1>Sushi Place</h1>
-            <div class="phone">
-                <a href="tel:+1333343343">315-343-0165</a>
-            </div>
+        <header>
+            <h1>Baby Bunnies for Sale</h1>
         </header>
         <nav>
             <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="easter.html">Easter Bunnies</a></li>
+                <li><a href="chocolate.html">Chocolate Bunnies</a></li>
+                <li>Monty Python Bunnies</li>
+                <li><a href="digital.html">Digital Bunnies</a></li>
+                <li>Contact</li>
             </ul>
         </nav>
-        <section id="about">
-            <p>Parmesan pepper jack squirty cheese. Camembert de normandie chalk and cheese caerphilly cut the cheese danish fontina paneer pecorino stilton. Ricotta stilton hard cheese chalk and cheese port-salut croque monsieur feta queso. Fromage frais stinking bishop cheese triangles macaroni cheese who moved my cheese airedale cow.</p>
-        </section>
-        <section id="hours">
-                <h3>Hours</h3>
-                <p>Monday: 12pm-10pm</p>
-                <i>Font Awesome</i>
-                <b>Bold Text</b>
-                <em>Font Awesome</em>
-                <strong>Bold Text</strong>
-        </section>
-        <section id="address">
-                <h3>Address</h3>
-                <p>address here</p>
-        </section>
-        <footer>
-            <div>
-                Social Media Icons
+        <div class="container">
+        <section id="products">
+            <!-- card type container for each bunny -->
+            <div class="row">
+                    <div class="card">
+                            <img class="img-fluid" src="images/babybunny.jpg"><br>
+                            <h2>Lionhead Bunny $30</h2>
+                            <a href="buy.html?bunny=lionhead&price=30"><button>Buy Now</button></a><br><br>
+                        </div>
+
+                        <div class="card">
+                                <img class="img-fluid" src="images/hottot.jpg"><br>
+                                <h2>Hot Tot Bunny $30</h2>
+                               <form method="POST" action="buy.html">
+                                   <input type="submit" value="Buy now"> 
+                                   <input type="hidden" name="bunny"  value="lionhead">
+                                   <input type="hidden" name="price" value="30">
+                               </form>
+                               <br><br>
+                            </div>
+
+                            <div class="card">
+                                    <img class="img-fluid" src="images/babybunny.jpg"><br>
+                                    <h2>Lionhead Bunny $30</h2>
+                                    <a href="buy.html?bunny=lionhead&price=30"><button>Buy Now</button></a><br><br>
+                                </div> 
+                                <div class="card">
+                                        <img class="img-fluid" src="images/babybunny.jpg"><br>
+                                        <h2>Lionhead Bunny $30</h2>
+                                        <a href="buy.html?bunny=lionhead&price=30"><button>Buy Now</button></a><br><br>
+                                    </div>                                 
+            </div>
+
+
+            <div id="baby-bunnies">
 
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.159642244709!2d-105.07698702867195!3d40.58223147123603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87694af682c306f3%3A0xbcc730222134f28e!2s416-410+Remington+St%2C+Fort+Collins%2C+CO+80524!5e0!3m2!1sen!2sus!4v1526580725847" width="600" height="450" style="border:1" allowfullscreen></iframe>
+        </section>
+        </div>
+        <footer>
+            <!-- social media icons -->
+            <!-- contact information -->
+            &copy; 2018 &lt;comp&nbsp;&nbsp;&nbsp;&gt;
         </footer>
     </body>
 </html>
